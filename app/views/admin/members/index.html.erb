@@ -1,0 +1,39 @@
+<% @page_title = "ユーザー一覧" %>
+<h1><%= @page_title %></h1>
+
+<%= form_tag(members_path, :method => 'get' ) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索', :name => nil %>
+<% end %>
+
+<div class="toolbar"><%= link_to "会員の新規登録", :new_admin_member %></div>
+
+<% if @members.present? %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th>ユーザー名</th>
+        <th>住んでいる所</th>
+        <th>誕生日</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @members.each do |member| %>
+        <tr>
+          <td><%= link_to member.name, [:admin, member] %></td>
+          <td><%= member.address %></td>
+          <td><%= member.birthday %></td>
+          <td>
+            <%= link_to "編集", [:edit, :admin, member] %> |
+            <%= link_to "削除", [:admin, member], method: :delete,
+              data: { confirm: "本当に削除しますか?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @members %>
+<% else %>
+  <p>会員情報がありません。</p>
+<% end %>
