@@ -1,25 +1,25 @@
-<% @page_title = "ユーザー一覧" %>
+<% @page_title = "会員一覧" %>
 <h1><%= @page_title %></h1>
 
-<%= form_tag(members_path, :method => 'get' ) do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag '検索', :name => nil %>
+<%= form_tag :search_members, method: :get, class: "search" do %>
+  <%= text_field_tag "q", params[:q] %>
+  <%= submit_tag "検索" %>
 <% end %>
 
 <% if @members.present? %>
   <table class="list">
     <thead>
       <tr>
-        <th>ユーザー名</th>
-        <th>住んでいる所</th>
-        <th>誕生日</th>
+        <th>会員番号</th>
+        <th>会員名</th>
+        <th>卒業年月日</th>
       </tr>
     </thead>
     <tbody>
       <% @members.each do |member| %>
         <tr>
+          <td style="text-align: right"><%= member.number %></td>
           <td><%= link_to member.name, member %></td>
-          <td><%= member.address %></td>
           <td><%= member.birthday %></td>
         </tr>
       <% end %>

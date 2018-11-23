@@ -8,6 +8,13 @@ class Member < ApplicationRecord
   attribute :new_profile_picture
   attribute :remove_profile_picture, :boolean
 
+  validates :number, presence: true,
+    numericality: {
+      only_integer: true,
+      greater_than: 0,
+      allow_blank: true
+    },
+    uniqueness: true
 	validates :name, presence: true, length: { maximum: 20 }
 	validates :email, email: { allow_blank: true }
 
@@ -32,27 +39,20 @@ class Member < ApplicationRecord
     end
   end
 
+  # いいね機能
   def votable_for?(entry)
     entry && entry.author != self && !votes.exists?(entry_id: entry.id)
   end
 
- # class << self
- #    def search(search)
- #      # rel = order("number")
- #      if search
- #      	Member.where(['name LIKE ?', "%#{search}%"]).reverse.order
- #      else
- #      	Member.all.reverse_order
- #      end
- #    end
- #  end
- #
-  # def self.search(search) #ここでのself.はUser.を意味する
-  #   if search
-  #     where(['name LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。User.は省略
-  #   else
-  #     all #全て表示。User.は省略
-  #   end
-  # end
+  # 会員検索
+  class << self
+      def search(query)
+        rel = order("number")
+       if query.present?
+       	rel = rel.where(['name LIKE ?', "%#{query}%"])
+       end
+       	rel
+      end
+   end
 end
 

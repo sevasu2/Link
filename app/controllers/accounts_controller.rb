@@ -28,6 +28,7 @@ class AccountsController < ApplicationController
       :sex,
       :birthday,
       :address,
+      :introduction,
       :email
     )
   end

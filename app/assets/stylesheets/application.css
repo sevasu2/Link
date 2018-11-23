@@ -14,6 +14,12 @@
  *= require_self
  */
 
+ .clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 /* ページ全体 */
 body {
   background-color: white;
@@ -50,7 +56,7 @@ ul.links li {
 }
 
 /* 全体の枠 */
-div#container {
+.container {
   margin: 0 auto;
   padding-top: 5px;
   width: 780px;
@@ -61,13 +67,14 @@ main {
   float: left;
   width: 530px;
   padding: 10px 10px 10px 0;
+  word-break: break-word; /*文字のはみ出しを防ぐ*/
 }
 
 /* 右の枠（サイドバーを入れる） */
 aside#sidebar {
   float: left;
   width: 230px;
-  background-color: #e8ffff;
+  background-color: #e8fffd;
   padding: 5px;
   font-size: 86%;
 }
@@ -101,7 +108,7 @@ footer nav ul li:not(:last-child):after {
 /* メニューバー */
 nav.menubar {
   padding: 2px;
-  background-color: #000;
+  background-color: #8deeee;
   color: #ccc;
   font-size: 80%;
   padding: 8px 16px;
@@ -120,7 +127,7 @@ nav.menubar a { text-decoration: none; }
 nav.menubar a:link { color: #ccc; }
 
 /* メニューバーのリンク（訪問済） */
-nav.menubar a:visited { color: #ccc; }
+nav.menubar a:visited { color: #1e90ff; }
 
 /* メニューバーのリンク（マウスを合わせたとき） */
 nav.menubar a:hover {
@@ -205,4 +212,101 @@ aside#sidebar ul {
 
 aside#sidebar li {
   margin-bottom: 0.3em;
+}
+
+/*スマホ*/
+@media screen and (max-width:480px) {
+  .container{
+    width: 100%;
+  }
+  header {
+    width: 100%;
+  }
+  .menubar {
+    width: 100%;
+  }
+  main {
+    width: 100%;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  #nav-drawer {
+  position: relative;
+  width: 30px;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #555;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 130px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: #363636;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
 }

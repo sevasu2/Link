@@ -3,11 +3,11 @@
 <table class="attr">
   <tr>
     <th width="80"><%= form.label :title %></th>
-    <td><%= form.text_field :title, size: 50 %></td>
+    <td><%= form.text_field :title, size: 50, placeholder: 'タイトル' %></td>
   </tr>
   <tr>
     <th><%= form.label :body %></th>
-    <td><%= form.text_area :body, rows: 10, cols: 45 %></td>
+    <td><%= form.text_area :body, rows: 10, cols: 45, placeholder: '本文' %></td>
   </tr>
   <tr>
     <th><%= form.label :posted_at, for: "entry_posted_at_1i" %></th>

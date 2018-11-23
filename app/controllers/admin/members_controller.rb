@@ -1,25 +1,16 @@
 class Admin::MembersController < Admin::Base
-  before_action :login_required
-
-    # 会員一覧
+   # 会員一覧
   def index
-    @members = Member.all
-    # if params[:name].present?
-    #   @members = Member.search(params[:search])
-    # end
-    @members = @members.page(params[:page]).per(10)
+    @members = Member.order("number")
+      .page(params[:page]).per(15)
   end
 
   # 検索
   def search
-    if !params[:name].blank?
-      @members = Member.where(["name LIKE ?", "%#{params[:name]}%"]).
-        page(params[:page]).per(30) if params[:name].present?
-    else
-      @members = Member.order("created_at DESC").
-        page(params[:page]).per(30)
-    end
-    render :action => "index"
+    @members = Member.search(params[:q])
+      .page(params[:page]).per(15)
+
+    render "index"
   end
 
   # 会員情報の詳細
@@ -69,6 +60,8 @@ class Admin::MembersController < Admin::Base
     attrs = [
       :new_profile_picture,
       :remove_profile_picture,
+      :number,
+      :introduction,
       :name,
       :sex,
       :birthday,

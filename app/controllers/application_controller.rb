@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
     raise LoginRequired unless current_member
   end
 
+  # エラー設定
   private def rescue_bad_request(exception)
     render "errors/bad_request", status: 400, layout: "error",
       formats: [:html]

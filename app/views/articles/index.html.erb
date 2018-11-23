@@ -6,7 +6,7 @@
     <h2><%= article.title %></h2>
     <p>
       <%= truncate(article.body, length: 80) %>
-      <%= link_to "もっと読む", article %>
+      <%= link_to "もっと見る", article %>
     </p>
     <div class="article-footer">
       <%= article.released_at.strftime("%Y/%m/%d %H:%M") %>
