@@ -2,7 +2,7 @@
 <h1><%= @page_title %></h1>
 
 <%= form_tag :search_members, method: :get, class: "search" do %>
-  <%= text_field_tag "q", params[:q] %>
+  <%= text_field_tag "q", params[:q], placeholder: '会員名' %>
   <%= submit_tag "検索" %>
 <% end %>
 
@@ -13,7 +13,7 @@
     <thead>
       <tr>
         <th>会員番号</th>
-        <th>ユーザー名</th>
+        <th>会員名</th>
         <th>卒業年月日</th>
         <th>操作</th>
       </tr>

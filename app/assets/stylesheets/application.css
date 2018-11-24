@@ -213,6 +213,10 @@ aside#sidebar ul {
 aside#sidebar li {
   margin-bottom: 0.3em;
 }
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
 
 /*スマホ*/
 @media screen and (max-width:480px) {
@@ -236,10 +240,7 @@ aside#sidebar li {
   width: 30px;
 }
 
-/*チェックボックス等は非表示に*/
-.nav-unshown {
-  display:none;
-}
+
 
 /*アイコンのスペース*/
 #nav-open {
