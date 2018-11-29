@@ -33,7 +33,9 @@ a:link { color: #00c; }
 a:visited { color: #00c; }
 a:hover { color: #f00; }
 a img { border: none; }
-
+a{
+  text-decoration: none;
+}
 /* ブロック要素 */
 p, h1, h2, h3, table, ul {
   margin: 0 0 1em;
@@ -74,14 +76,15 @@ main {
 aside#sidebar {
   float: left;
   width: 230px;
-  background-color: #e8fffd;
+  background-color: #f7f7f7;
   padding: 5px;
+  margin-top: 10px;
   font-size: 86%;
 }
 
 /* ヘッダー */
 header {
-  border-top: 4px solid #6bb;
+  border-top: 4px solid #88c;
   padding-top: 4px;
 }
 
@@ -95,7 +98,7 @@ footer {
   font: 11px Verdana;
   color: #888;
   padding: 8px 0;
-  border-top: 4px solid #6bb;
+  border-top: 4px solid #88c;
   text-align: center;
 }
 
@@ -108,7 +111,7 @@ footer nav ul li:not(:last-child):after {
 /* メニューバー */
 nav.menubar {
   padding: 2px;
-  background-color: #8deeee;
+  background-color: #88c;
   color: #ccc;
   font-size: 80%;
   padding: 8px 16px;
@@ -137,9 +140,15 @@ nav.menubar a:hover {
 
 /* メニューバーのリンク（現在のページ） */
 nav.menubar span {
-  color: #ff8;
+  color: #fff;
   font-weight: bold;
 }
+nav.menubar a {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+
 
 /* メインコンテンツ */
 main h1 {
@@ -198,7 +207,7 @@ form#login-form input[type="password"] {
 }
 
 aside#sidebar h2 {
-  color: #080;
+  color: #88c;
   font-weight: bold;
   border-bottom: 1px dotted #080;
   margin-bottom: 0.5em;
@@ -224,15 +233,15 @@ aside#sidebar li {
     width: 100%;
   }
   header {
-    width: 100%;
+    width: 90%;
   }
   .menubar {
-    width: 100%;
   }
   main {
     width: 100%;
+    padding: 20px;
   }
-  .sidebar {
+  aside#sidebar {
     width: 100%;
   }
   #nav-drawer {
@@ -296,6 +305,16 @@ aside#sidebar li {
   transition: .3s ease-in-out;/*滑らかに表示*/
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);/*左に隠しておく*/
+}
+#nav-content ul li{
+  display: block;
+  padding: 10px;
+
+}
+@media screen and (max-width:480px) {
+  nav.menubar ul li:not(:last-child):after{
+    color:#363636;
+  }
 }
 
 /*チェックが入ったらもろもろ表示*/

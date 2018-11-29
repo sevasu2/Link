@@ -5,7 +5,7 @@ table.list, table.attr {
 }
 
 table.list th, table.attr th {
-  background-color: #499;
+  background-color: #88c;
   color: white;
   font-weight: normal;
 }
@@ -24,5 +24,5 @@ table.attr th {
 }
 
 table.list td, table.attr td {
-  background-color: #cee;
+  background-color: rgba(128,128,166,0.3);
 }
