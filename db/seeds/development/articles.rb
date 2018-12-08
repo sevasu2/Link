@@ -1,8 +1,8 @@
 body =
-  "texttexttexttexttexttexttexttexttexttexttexttext\n\n" +
-  "texttexttexttexttexttexttexttexttexttexttexttext" +
-  "texttexttexttexttexttexttexttexttexttexttexttexttexttext\n\n" +
-  "texttexttexttexttexttexttexttexttexttexttexttexttexttext"
+  "インフラトップがDMM.comに買収されたとのこと\n\n" +
+  "買収金額などは不明であるが、ベンチャーキャピタルなどが保有する発行済み株式の60％をDMMが21日付で取得。" +
+  "IT人材の不足を背景にプログラミング教育市場は伸びているので、\n\n" +
+  "DMMの参加でさらなる成長を目指すのこと。"
 
 0.upto(9) do |idx|
   Article.create(

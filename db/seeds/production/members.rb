@@ -10,7 +10,7 @@ gnames = ["太郎", "次郎", "花子"]
     sex: [1, 1, 2][idx % 3],
     administrator: (idx == 0),
     password: "asagao!",
-    password_confirmation: "asagao!"
+    password_confirmation: "linkstart"
   )
 end
 

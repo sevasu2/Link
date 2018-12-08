@@ -1,9 +1,9 @@
 body =
-  "texttexttexttexttexttexttexttexttexttexttexttext\n\n" +
-  "texttexttexttexttexttexttexttexttexttexttexttext" +
-  "texttexttexttexttexttexttexttexttexttexttexttext" +
-  "texttexttexttexttexttexttexttexttexttexttexttext\n\n" +
-  "texttexttexttexttexttexttexttexttexttexttexttext"
+  "転職するための準備完了、これからは転職活動にが本格化する。\n\n" +
+  "まだまだ、駆け出しにするら立てていないので、これからもプログラミングも勉強！ " +
+  "とうぶんは、転職を決めさらなる飛躍に努めなければ！" +
+  "今後はまず、企業で就職してから、使う知識、言語をメインに勉強していいこうと思う。\n\n" +
+  "WebCampProでは充実した3ヶ月をありがとうございました！"
 
 %w(Taro Jiro Hana).each do |name|
   member = Member.find_by(name: name)
