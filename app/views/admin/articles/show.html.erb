@@ -2,10 +2,10 @@
 <h1><%= @article.title %></h1>
 
 <% if current_member %>
-  <div class="toolbar"><%= link_to "編集", [:edit, :admin, @article] %></div>
+  <div class="toolbar admin-regi"><%= link_to "編集", [:edit, :admin, @article] %></div>
 <% end %>
 
-<table class="attr">
+<table class="attr margin-top">
   <tr>
     <th width="100">タイトル</th>
     <td><%= @article.title %></td>

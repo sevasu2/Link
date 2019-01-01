@@ -1,9 +1,14 @@
-<% @page_title = @entry.title + " - " + @entry.author.name + "さんのイベント" %>
-<h1><%= @entry.author.name %>さんのイベント</h1>
+<% @page_title = @entry.title + " - " + @entry.author.name + "さんのポートフォリオ記事" %>
+<div class="page-event">
+	<h1><%= @entry.author.name %>さんのポートフォリオ記事</h1>
+</div>
 <h2><%= @entry.title %></h2>
 
-<%= the_first_image(@entry) %>
-<%= auto_link (simple_format(@entry.body)) %>
-<%= other_images(@entry) %>
+<div class="single-page">
+	<%= the_first_image(@entry) %>
+	<%= auto_link (simple_format(@entry.body)) %>
+	<%= other_images(@entry) %>
+</div>
+
 <%= render "footer", entry: @entry %>
 <%= render "votes" %>

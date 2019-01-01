@@ -1,4 +1,4 @@
-$(document).on("turbolinks:load", function() {
+$(document).on('turbolinks:load', function() {
   var cb = $("#article_no_expiration");
   var field = $("#article_expired_at");
 
@@ -12,4 +12,3 @@ $(document).on("turbolinks:load", function() {
   cb.bind("click", changeExpiredAt);
 
   changeExpiredAt();
-})

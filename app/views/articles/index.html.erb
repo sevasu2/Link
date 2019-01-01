@@ -3,14 +3,16 @@
 
 <% if @articles.present? %>
   <% @articles.each do |article| %>
+  <div class="article-contents">
     <h2><%= article.title %></h2>
     <p>
-      <%= truncate(article.body, length: 80) %>
+      <%= truncate(article.body, length: 140) %>
       <%= link_to "もっと見る", article %>
     </p>
     <div class="article-footer">
       <%= article.released_at.strftime("%Y/%m/%d %H:%M") %>
     </div>
+  </div>
   <% end %>
 <% else %>
   <p>ニュースがありません。</p>

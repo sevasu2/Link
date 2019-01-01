@@ -15,3 +15,27 @@
 //= require turbolinks
 //= require jquery
 //= require_tree .
+
+
+
+$(document).on('turbolinks:load', function() {
+	$('.login-menu a').click(function(){
+		var id = $(this).attr('href');
+		var position = $(id).offset().top;
+		$('html,body').animate({
+			'scrollTop':position
+		},'slow');
+	});
+});
+
+$(document).on('turbolinks:load', function(){
+	wow = new WOW(
+    {
+    boxClass: 'wow', // default
+    animateClass: 'animated', // default
+    offset:0// アニメーションをスタートさせる距離
+    }
+  );
+  wow.init();
+});
+

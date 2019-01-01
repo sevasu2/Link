@@ -1,7 +1,7 @@
-<% @page_title = "イベントの新規作成" %>
+<% @page_title = "ポートフォリオ記事の新規作成" %>
 <h1><%= @page_title %></h1>
 
 <%= form_for @entry do |form| %>
   <%= render "form", form: form %>
-  <div><%= form.submit %></div>
+  <div class="event-submit"><%= form.submit %></div>
 <% end %>

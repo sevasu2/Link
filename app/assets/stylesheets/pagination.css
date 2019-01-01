@@ -1,0 +1,15 @@
+nav.pagination {
+  font-size: 16px;
+  padding: 4px 8px;
+  border: 2px solid #c8e4ff;
+  word-spacing: 5px;
+  margin:20px;
+}
+
+.pagination span a{
+  color:#58a9ef;
+}
+
+.pagination span.current {
+  font-weight: bold;
+}

@@ -31,7 +31,6 @@ class PasswordsController < ApplicationController
     end
   end
 
-  # ストロング・パラメータ
   private def account_params
     params.require(:account).permit(
       :current_password,

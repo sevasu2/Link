@@ -2,17 +2,19 @@
 table.list, table.attr {
   font-size: 90%;
   width: 100%;
+  padding:20px;
 }
 
 table.list th, table.attr th {
-  background-color: #88c;
-  color: white;
+  background-color: #c8e4ff;
+  color: #58a9ef;
   font-weight: normal;
 }
 
 table.list td, table.list th,
 table.attr td, table.attr th {
-  padding: 4px;
+  padding: 10px 20px;
+
 }
 
 table.list th {
@@ -24,5 +26,96 @@ table.attr th {
 }
 
 table.list td, table.attr td {
-  background-color: rgba(128,128,166,0.3);
+  background-color: #eaedf2;
+}
+
+table.list td a, table.attr td a{
+	color:#58a9ef;
+}
+
+.attr td input[type="text"],.attr td textarea{
+	border:none;
+	width:50%;
+	border:2px solid #c8e4ff;
+  	padding:5px;
+  	border-radius: 3px;
+  	margin-bottom:10px;
+  	box-sizing: border-box;
+}
+
+.attr td textarea{
+	width:100%;
+}
+
+.attr td select{
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border:2px solid #58a9ef;
+	outline: none;
+	padding: 8px 38px 8px 8px;
+	color: #283c50;
+}
+
+.event-submit input[type="submit"]{
+	display: block;
+	margin-left:20px;
+	color:#fff;
+	background-color: #58a9ef;
+	padding:10px 20px;
+	border-radius:3px;
+	box-shadow: 0 3px 6px rgba(0,0,0,.18);
+}
+
+.event-submit input[type="submit"]:hover{
+	opacity:0.7;
+	position:relative;
+	top:6px;
+	box-shadow: none;
+}
+
+.event-submit a{
+	display: inline-block;
+	margin-left:20px;
+	color:#fff !important;
+	background-color: #58a9ef;
+	padding:10px 20px;
+	border-radius:3px;
+	box-shadow: 0 3px 6px rgba(0,0,0,.18);
+}
+
+.event-submit a:hover{
+	opacity:0.7;
+	position:relative;
+	top:6px;
+	box-shadow: none;
+}
+
+.quit a{
+	background-color: #cc3333;
+}
+
+.edit_entry{
+	margin-top:70px;
+}
+
+.news-all{
+	margin-top:70px;
+}
+
+.event-img-head h1{
+	color:#c8e4ff;
+	border-color: #c8e4ff;
+}
+
+.event-img-head h2{
+	border-bottom:none;
+}
+
+.myacount-table{
+	margin-top:60px;
+}
+
+.pass-table{
+	margin-top:60px;
 }

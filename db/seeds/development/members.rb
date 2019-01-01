@@ -8,6 +8,10 @@ gnames = ["太郎", "次郎", "花子"]
     email: "#{names[idx]}@example.com",
     birthday: "1981-12-01",
     sex: [1, 1, 2][idx % 3],
+    school: "スクール",
+    git: "https://sevasu.com",
+    portfolio: "https://sevasu.com",
+    introduction_name: "Link",
     administrator: (idx == 0),
     password: "asagao!",
     password_confirmation: "asagao!"
@@ -21,6 +25,10 @@ end
     email: "John#{idx+1}@example.com",
     birthday: "1981-12-01",
     sex: 1,
+    school: "スクール",
+    git: "sevasu.com",
+    portfolio: "sevasu.com",
+    introduction_name: "Link",
     administrator: false,
     password: "password",
     password_confirmation: "password"

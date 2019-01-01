@@ -1,1 +1,12 @@
-<%= link_to "このサイトについて", :about %>
+<div class="f-contents">
+      <ul>
+        <%= menu_link_to "ポートフォリオ", :entries %>
+        <%= menu_link_to "会員になるには", :about %>
+        <% if current_member %>
+          <%= menu_link_to "会員一覧", :members %>
+          <% if current_member.administrator? %>
+            <%= menu_link_to "管理ページ", :admin_root %>
+          <% end %>
+        <% end %>
+      </ul>
+</div>

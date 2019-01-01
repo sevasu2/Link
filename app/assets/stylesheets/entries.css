@@ -1,16 +1,48 @@
+.entry-box{
+  padding:20px;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  margin:20px;
+  border:1px solid #f7f7f7;
+}
+
+.page-event h1{
+  color:#c8e4ff;
+  border-bottom:1px dashed #c8e4ff;
+}
+
+.entry-box p a{
+  display: inline-block;
+  background-color: #58a9ef;
+  color:#fff;
+  font-size:14px;
+  padding:5px;
+  border-radius: 3px;
+  position: relative;
+  top:10px;
+  left:10px;
+}
+
+.entry-box p{
+  padding:10px 20px;
+}
+
 main ul.entry-footer {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px #ccf dashed;
-  padding-top: 4px;
-  margin-bottom: 15px;
+  border-top: 1px #58a9ef solid;
+  padding: 20px;
+  padding-bottom:0;
   text-align: right;
   font-size: 75%;
 }
 
 main ul.entry-footer li {
   display: inline;
+  color:#283c50;
+}
+
+main ul.entry-footer li a {
+  color:#58a9ef;
 }
 
 main ul.entry-footer li:not(:last-child):after {
@@ -22,7 +54,7 @@ main ul.entry-footer li:not(:last-child):after {
 /* 投票 */
 main span.vote,
 main p.vote {
-  color: #88c;
+  color: #cc3333;
 }
 
 span.vote a.button,

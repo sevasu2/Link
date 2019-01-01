@@ -1,7 +1,9 @@
 <% @articles.each do |article| %>
-  <h2><%= article.title %></h2>
-  <p>
-    <%= truncate article.body, length: 80 %>
-    <%= link_to "もっと見る", article %>
-  </p>
+<div class="article-contents">
+	<h2><%= article.title %></h2>
+  	<p>
+    	<%= truncate article.body, length: 140 %>
+    	<%= link_to "もっと見る", article %>
+  	</p>
+</div>
 <% end %>

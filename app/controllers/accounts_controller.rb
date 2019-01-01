@@ -19,7 +19,12 @@ class AccountsController < ApplicationController
     end
   end
 
-  # ストロング・パラメータ
+  def destroy
+    @member = Member.find(params[:id])
+    @member.destroy
+    redirect_to :root, notice: "ご利用ありがとうございました。退会が完了しました。"
+  end
+
   private def account_params
     params.require(:account).permit(
       :new_profile_picture,
@@ -29,7 +34,11 @@ class AccountsController < ApplicationController
       :birthday,
       :address,
       :introduction,
-      :email
+      :email,
+      :git,
+      :introduction_name,
+      :portfolio,
+      :school
     )
   end
 end

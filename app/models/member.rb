@@ -16,6 +16,9 @@ class Member < ApplicationRecord
     },
     uniqueness: true
 	validates :name, presence: true, length: { maximum: 20 }
+  validates :school, presence: true, length: { maximum: 30 }
+  validates :portfolio, presence: true
+  validates :introduction_name, presence: true
 	validates :email, email: { allow_blank: true }
 
 	attr_accessor :current_password
@@ -44,12 +47,12 @@ class Member < ApplicationRecord
     entry && entry.author != self && !votes.exists?(entry_id: entry.id)
   end
 
-  # 会員検索
+  # 検索機能（会員名とスクール名で検索）
   class << self
       def search(query)
         rel = order("number")
        if query.present?
-       	rel = rel.where(['name LIKE ?', "%#{query}%"])
+       	rel = rel.where(['name LIKE ? OR school LIKE ?', "%#{query}%", "%#{query}%"])
        end
        	rel
       end

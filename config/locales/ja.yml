@@ -19,6 +19,10 @@ ja:
         current_password: 現在のパスワード
         password: 新しいパスワード
         password_confirmation: 新しいパスワードの確認
+        school: スクール名
+        git: Git_URL
+        introduction_name: ポートフォリオタイトル
+        portfolio: ポートフォリオURL
       article:
         title: タイトル
         body: 本文

@@ -1,29 +1,32 @@
 <% @page_title = "会員一覧" %>
 <h1><%= @page_title %></h1>
 
-<%= form_tag :search_members, method: :get, class: "search" do %>
-  <%= text_field_tag "q", params[:q], placeholder: '会員名' %>
+<div class="margin-top90">
+  <%= form_tag :search_members, method: :get, class: "search" do %>
+  <%= text_field_tag "q", params[:q], placeholder: '会員名orスクール名' %>
   <%= submit_tag "検索" %>
 <% end %>
+</div>
 
-<div class="toolbar"><%= link_to "会員の新規登録", :new_admin_member %></div>
+
+<div class="toolbar admin-regi"><%= link_to "会員の新規登録", :new_admin_member %></div>
 
 <% if @members.present? %>
   <table class="list">
     <thead>
       <tr>
-        <th>会員番号</th>
         <th>会員名</th>
-        <th>卒業年月日</th>
+        <th>スクール名</th>
+        <th>ポートフォリオURL</th>
         <th>操作</th>
       </tr>
     </thead>
     <tbody>
       <% @members.each do |member| %>
         <tr>
-          <td><%= member.number %>
           <td><%= link_to member.name, [:admin, member] %></td>
-          <td><%= member.birthday %></td>
+          <td><%= member.school %>
+          <td><%= auto_link member.portfolio %>
           <td>
             <%= link_to "編集", [:edit, :admin, member] %> |
             <%= link_to "削除", [:admin, member], method: :delete,

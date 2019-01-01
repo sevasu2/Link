@@ -1,10 +1,13 @@
 <% @page_title = "イベント記事の画像" %>
-<h1><%= @page_title %></h1>
-<h2><%= @entry.title %></h2>
+<div class="event-img-head">
+  <h1><%= @page_title %></h1>
+  <h2><%= @entry.title %></h2>
+</div>
+
 
 <ul class="toolbar">
-  <%= menu_link_to "イベント記事に戻る", @entry %>
   <%= menu_link_to "画像の追加", [:new, @entry, :image] %>
+  <%= menu_link_to "ポートフォリオ記事に戻る", @entry %>
 </ul>
 
 <% if @images.present? %>

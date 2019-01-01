@@ -1,8 +1,8 @@
-<% @page_title = "投票したイベント" %>
+<% @page_title = "いいねしたポートフォリオ記事" %>
 <h1><%= @page_title %></h1>
 
 <% if @entries.present? %>
-  <ul>
+  <ul class="vote-list">
     <% @entries.each do |entry| %>
     <li>
       <%= link_to entry.title, entry %>
@@ -14,5 +14,5 @@
   </ul>
   <%= paginate @entries %>
 <% else %>
-  <p>投票したイベントはありません。</p>
+  <p>いいねしたポートフォリオ記事はありません。</p>
 <% end %>

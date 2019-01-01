@@ -36,6 +36,10 @@
     </td>
   </tr>
   <tr>
+    <th><%= form.label :school, "スクール名" %></th>
+    <td><%= form.text_field :school %></td>
+  </tr>
+  <tr>
     <th><%= form.label :birthday, "卒業年月日",
               for: "member_birthday_1i" %></th>
     <td><%= form.date_select :birthday,
@@ -45,6 +49,18 @@
   <tr>
     <th><%= form.label :email, "メールアドレス" %></th>
     <td><%= form.text_field :email %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :introduction_name, "ポートフォリオタイトル" %></th>
+    <td><%= form.text_field :introduction_name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :portfolio, "ポートフォリオURL" %></th>
+    <td><%= form.text_field :portfolio %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :git, "Git_URL" %></th>
+    <td><%= form.text_field :git %></td>
   </tr>
   <tr>
     <th><%= form.label :introduction, "紹介" %></th>

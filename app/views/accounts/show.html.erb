@@ -1,10 +1,19 @@
 <% @page_title = "マイアカウント" %>
 
-<h1><%= @page_title %></h1>
+<div class="border-none">
+	<h1><%= @page_title %></h1>
+</div>
 
 <ul class="toolbar">
   <%= menu_link_to "アカウント情報の編集", :edit_account %>
   <%= menu_link_to "パスワードの変更", :edit_password %>
 </ul>
 
-<%= render "members/body" %>
+<div class="myacount-table">
+	<%= render "members/body" %>
+</div>
+
+<div class="event-submit quit">
+	<%= link_to "退会", @member, method: :delete,
+                data: { confirm: "退会すると、ログインするには再度の登録が必要になります。本当に退会しますか?" } %>
+</div>

@@ -1,6 +1,10 @@
 /* フラッシュ */
 p.notice {
-  border: 1px solid blue;
-  padding: 3px;
-  background-color: #ccf;
+  padding: 10px;
+  background-color: #58a9ef;
+  color:#FFF;
+}
+
+.border-none h1{
+	border-bottom: none;
 }

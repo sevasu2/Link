@@ -1,4 +1,6 @@
-<%= image_tag 'Link.png',size: '160x56' %>
+<%= link_to root_path do %>
+  <%= image_tag 'Link.png',size: '160x56' %>
+<% end %>
 
 <% if current_member %>
   <ul class="account-menu">
@@ -6,6 +8,10 @@
     <%= menu_link_to "ログアウト", :session,
           method: :delete, data: { confirm: "ログアウトしますか？" } %>
   </ul>
+  <% else %>
+  <div class="login-menu">
+    <a href="#login">ログイン</a>
+  </div>
 <% end %>
 
 <%=

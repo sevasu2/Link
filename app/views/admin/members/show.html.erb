@@ -2,6 +2,8 @@
 
 <h1><%= @page_title %></h1>
 
-<div class="toolbar"><%= link_to "編集", [:edit, :admin, @member] %></div>
+<div class="toolbar gradient-btn"><%= link_to "編集", [:edit, :admin, @member] %></div>
 
-<%= render "body" %>
+<div class="margin-top">
+	<%= render "body" %>
+</div>

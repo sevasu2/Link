@@ -24,12 +24,28 @@
     <td><%= @member.sex == 1 ? "男" : "女" %></td>
   </tr>
   <tr>
+    <th>スクール名</th>
+    <td><%= @member.school %></td>
+  </tr>
+  <tr>
     <th>卒業年月日</th>
     <td><%= @member.birthday&.strftime("%Y年%m月%d日") %></td>
   </tr>
   <tr>
     <th>メールアドレス</th>
     <td><%= @member.email %></td>
+  </tr>
+  <tr>
+    <th>ポートフォリオタイトル</th>
+    <td><%= @member.introduction_name %></td>
+  </tr>
+  <tr>
+    <th>ポートフォリオURL</th>
+    <td><%= auto_link (@member.portfolio) %></td>
+  </tr>
+  <tr>
+    <th>Git_URL</th>
+    <td><%= auto_link (@member.git) %></td>
   </tr>
   <tr>
     <th>紹介</th>

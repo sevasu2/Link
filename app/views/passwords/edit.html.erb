@@ -1,12 +1,12 @@
 <% @page_title = "パスワードの変更" %>
 <h1><%= @page_title %></h1>
 
-<div class="toolbar"><%= link_to "マイアカウントに戻る", :account %></div>
+<div class="toolbar admin-regi"><%= link_to "マイアカウントに戻る", :account %></div>
 
 <%= form_for @member, as: "account", url: :password do |form| %>
   <%= render "shared/errors", obj: @member %>
 
-  <table class="attr">
+  <table class="attr pass-table">
     <tr>
       <th><%= form.label :current_password %></th>
       <td><%= form.password_field :current_password %></td>
@@ -21,5 +21,5 @@
     </tr>
   </table>
 
-  <div><%= form.submit "変更" %></div>
+  <div class="event-submit"><%= form.submit "変更" %></div>
 <% end %>

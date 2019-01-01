@@ -1,9 +1,8 @@
 class EntriesController < ApplicationController
   before_action :login_required, except: [:index, :show]
 
-  # 記事一覧
   def index
-  	    if params[:member_id]
+  	 if params[:member_id]
       @member = Member.find(params[:member_id])
       @entries = @member.entries
     else
@@ -11,25 +10,21 @@ class EntriesController < ApplicationController
     end
 
     @entries = @entries.readable_for(current_member)
-      .order(posted_at: :desc).page(params[:page]).per(3)
+      .order(posted_at: :desc).page(params[:page]).per(5)
   end
 
-  # 記事詳細
   def show
     @entry = Entry.readable_for(current_member).find(params[:id])
   end
 
-  # 新規登録フォーム
   def new
   	@entry = Entry.new(posted_at: Time.current)
   end
 
-  # 編集フォーム
   def edit
   	@entry = current_member.entries.find(params[:id])
   end
 
-  # 新規作成
   def create
     @entry = Entry.new(entry_params)
     @entry.author = current_member
@@ -40,7 +35,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  # 更新
   def update
     @entry = current_member.entries.find(params[:id])
     @entry.assign_attributes(entry_params)
@@ -51,7 +45,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  # 削除
   def destroy
     @entry = current_member.entries.find(params[:id])
     @entry.destroy
@@ -62,7 +55,7 @@ class EntriesController < ApplicationController
   def like
     @entry = Entry.published.find(params[:id])
     current_member.voted_entries << @entry
-    redirect_to @entry, notice: "投票しました。"
+    redirect_to @entry, notice: "いいね！しました。"
   end
 
   # 投票削除
@@ -78,7 +71,6 @@ class EntriesController < ApplicationController
       .page(params[:page]).per(15)
   end
 
-  # ストロング・パラメータ
   private def entry_params
     params.require(:entry).permit(
       :member_id,

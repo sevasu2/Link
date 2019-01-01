@@ -1,15 +1,20 @@
-<h2>ログイン</h2>
-<% if flash.alert %><p class="alert"><%= flash.alert %></p><% end %>
-<%= form_tag :session, id: "login-form" do %>
-  <div>
-    <label>ユーザー名：</label>
+<div id="login">
+  <h2>ログイン</h2>
+  <% if flash.alert %><p class="alert"><%= flash.alert %></p><% end %>
+  <%= form_tag :session, id: "login-form" do %>
+  <div class="login-user">
+    <label>会員名</label>
     <input type="text" name="name", placeholder="会員名">
   </div>
-  <div>
-    <label>パスワード：</label>
+  <div class="login-pass">
+    <label>パスワード</label>
     <input type="password" name="password", placeholder="パスワード">
   </div>
-  <div>
+  <div class="login-submit">
     <input type="submit" value="ログイン">
   </div>
-<% end %>
+  <div class="login-coution">
+    <%= link_to "＊会員になるには", about_path %>
+  </div>
+  <% end %>
+</div>

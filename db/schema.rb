@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_23_031322) do
+ActiveRecord::Schema.define(version: 2018_12_29_071120) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(version: 2018_11_23_031322) do
     t.string "password_digest"
     t.integer "number"
     t.text "introduction"
+    t.string "git"
+    t.text "introduction_name"
+    t.string "portfolio"
+    t.string "school"
+    t.index ["name", "school"], name: "index_members_on_name_and_school"
   end
 
   create_table "votes", force: :cascade do |t|

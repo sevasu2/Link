@@ -23,7 +23,6 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css" media="all" >
 
-
   </head>
 
   <body>
@@ -31,6 +30,20 @@
       <header class="wow fadeInDown" data-wow-duration="2.5s">
         <%= render "shared/header" %>
       </header>
+
+      <div class="about wow fadeInUp" data-wow-duration="2.5s">
+        <div class="flex_box">
+          <div class="about-img">
+            <%= image_tag 'about-img.png',size: '160x56' %>
+          </div>
+          <div class="about-text">
+            <h2>初めて作ったポートフォリオを共有しよう！</h2>
+            <p>会員登録をした方のみ、自分の作ったポートフォリオを紹介できるようになっています。また、他の会員の方の情報を見ることができます。<br>
+            会員登録されていない方はポートフォリオ記事の閲覧とニュースのみ見られます。</p>
+            <%= link_to "＞もっと見る", about_path %>
+          </div>
+        </div>
+      </div>
 
       <div class="flex_box wow fadeInUp" data-wow-duration="2.0s">
         <main class="clearfix">
