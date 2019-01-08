@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+会員の方の機能
+自分で作ったポートフォリオの記事作成（画像も添付可）
+公開の仕方は、下書き（自分だけが閲覧可）、会員限定、公開（非会員も閲覧可）と設定できます。
+内容にURLをつけるとリンク先に飛べるようになってます。
+いいと思ったポートフォリオにいいねできます。
+右上の名前からアカウントの編集ができます。
+他の会員の方の情報も閲覧可
+ニュースは閲覧のみ可。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+非会員の方の機能
+非会員にも公開されたニュースの閲覧
+非会員にも公開されたポートフォリオ記事の閲覧

@@ -295,7 +295,7 @@ nav.menubar {
 
 nav.menubar ul li:not(:last-child):after {
   color: #fff;
-  content: " | ";
+  content: "  ";
   margin: 0 2px;
   padding:10px;
 }
@@ -964,5 +964,7 @@ table.attr input[type="file"]{
   font-size:12px;
 }
 
+table.list{
+  padding: 0;
 }
 
