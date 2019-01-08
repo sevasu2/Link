@@ -28,14 +28,4 @@ $(document).on('turbolinks:load', function() {
 	});
 });
 
-$(document).on('turbolinks:load', function(){
-	wow = new WOW(
-    {
-    boxClass: 'wow', // default
-    animateClass: 'animated', // default
-    offset:0// アニメーションをスタートさせる距離
-    }
-  );
-  wow.init();
-});
 

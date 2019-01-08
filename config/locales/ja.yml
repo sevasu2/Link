@@ -23,6 +23,7 @@ ja:
         git: Git_URL
         introduction_name: ポートフォリオタイトル
         portfolio: ポートフォリオURL
+        address: 住所
       article:
         title: タイトル
         body: 本文

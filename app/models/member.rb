@@ -15,7 +15,7 @@ class Member < ApplicationRecord
       allow_blank: true
     },
     uniqueness: true
-	validates :name, presence: true, length: { maximum: 20 }
+	validates :name, presence: true, length: { minimum: 2, maximum: 20 }
   validates :school, presence: true, length: { maximum: 30 }
   validates :portfolio, presence: true
   validates :introduction_name, presence: true
