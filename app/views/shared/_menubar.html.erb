@@ -5,9 +5,11 @@
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
     <div id="nav-content">
       <ul>
-        <%= menu_link_to "ポートフォリオ", :entries %>
-        <%= menu_link_to "会員になるには", :about %>
-        <% if current_member %>
+        <% unless current_member %>
+          <%= menu_link_to "ポートフォリオ", :entries %>
+          <%= menu_link_to "会員になるには", :about %>
+        <% else %>
+          <%= menu_link_to "ポートフォリオ", :entries %>
           <%= menu_link_to "会員一覧", :members %>
           <% if current_member.administrator? %>
             <%= menu_link_to "管理ページ", :admin_root %>

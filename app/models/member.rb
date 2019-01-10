@@ -15,7 +15,9 @@ class Member < ApplicationRecord
       allow_blank: true
     },
     uniqueness: true
-	validates :name, presence: true, length: { minimum: 2, maximum: 20 }
+	validates :name, presence: true,
+    length: { minimum: 2, maximum: 20 },
+    uniqueness: { case_sensitive: false }
   validates :school, presence: true, length: { maximum: 30 }
   validates :portfolio, presence: true
   validates :introduction_name, presence: true
@@ -43,6 +45,7 @@ class Member < ApplicationRecord
   end
 
   # いいね機能
+  #自分の記事には投票できない、1つの記事に1回しか投票できない
   def votable_for?(entry)
     entry && entry.author != self && !votes.exists?(entry_id: entry.id)
   end

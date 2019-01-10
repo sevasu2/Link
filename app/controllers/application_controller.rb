@@ -4,11 +4,12 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_member
 
-  class LoginRequired < StandardError; end
-  class Forbidden < StandardError; end
+  class LoginRequired < StandardError; end #一般的な例外を表すスタンダートエラーの継承
+  class Forbidden < StandardError; end #一般的な例外を表すスタンダートエラーの継承し、１９行目のメソッドを使う
 
+  # 　例外を処理する（rescue_formは順番を変えてはいけない）
   if Rails.env.production? || ENV["RESCUE_EXCEPTIONS"]
-    rescue_from StandardError, with: :rescue_internal_server_error
+    rescue_from StandardError, with: :rescue_internal_server_error #findメソッドが例外ActiveRecord::RecordNotFoundを発生させたときにrescue_404メソッドを実行
     rescue_from ActiveRecord::RecordNotFound, with: :rescue_not_found
     rescue_from ActionController::ParameterMissing, with: :rescue_bad_request
   end
@@ -19,6 +20,7 @@ class ApplicationController < ActionController::Base
   private def login_required
     raise LoginRequired unless current_member
   end
+  #上記プライベートメソッドはbefore_actionのコールバックを使うため
 
   # エラー設定
   private def rescue_bad_request(exception)
@@ -46,3 +48,4 @@ class ApplicationController < ActionController::Base
       formats: [:html]
   end
 end
+

@@ -1,3 +1,4 @@
+// ニュース投稿ページの掲載日時をクリックで表示、非表示をする
 $(document).on("turbolinks:load", function() {
   var cb = $("#article_no_expiration");
   var field = $("#article_expired_at");

@@ -14,6 +14,7 @@
  *= require_self
  */
 
+/*フロートのはみ出しを防ぐための枠設定*/
  .clearfix::after {
   content: "";
   display: block;
@@ -331,7 +332,7 @@ main h1 {
   color: #58a9ef;
   font-weight: normal;
   font-size: 150%;
-  border-bottom: 2px solid #58a9ef;
+  /*border-bottom: 2px solid #58a9ef;*/
   margin-bottom: 0.5em;
 }
 
@@ -417,7 +418,6 @@ div.toolbar {
 }
 
 
-
 .article-contents{
   padding:20px;
   border:1px solid #f7f7f7;
@@ -488,7 +488,6 @@ div.toolbar {
   top:3px;
   opacity: 0.7;
 }
-
 
 
 /* サイドバー */
@@ -716,8 +715,8 @@ nav.menubar{
 /*ハンバーガーアイコンをCSSだけで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
   position: absolute;
-  height: 3px;/*線の太さ*/
-  width: 25px;/*長さ*/
+  height: 3px;
+  width: 25px;
   border-radius: 3px;
   background: #fff;
   display: block;

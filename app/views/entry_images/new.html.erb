@@ -5,5 +5,5 @@
 <% url = entry_images_path(@entry, @image) %>
 <%= form_for @image, as: "image", url: url do |form| %>
   <%= render "form", form: form %>
-  <div><%= form.submit %></div>
+  <div class="event-submit"><%= form.submit %></div>
 <% end %>

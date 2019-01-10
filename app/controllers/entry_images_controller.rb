@@ -1,26 +1,31 @@
 class EntryImagesController < ApplicationController
-  before_action :login_required
+  before_action :login_required #ログインしているか
 
   before_action do
-    @entry = current_member.entries.find(params[:entry_id])
+    @entry = current_member.entries.find(params[:entry_id]) #ログインしているポートフォリオデータ
   end
 
+  #画像の一覧
   def index
     @images = @entry.images.order(:position)
   end
 
+  #詳細ページ
   def show
-    redirect_to action: "edit"
+    redirect_to action: "edit" #編集ページに遷移
   end
 
+  #新規フォーム
   def new
     @image = @entry.images.build
   end
 
+  # 編集ページ
   def edit
     @image = @entry.images.find(params[:id])
   end
 
+  # 新規作成
   def create
     @image = @entry.images.build(image_params)
     if @image.save
@@ -30,6 +35,7 @@ class EntryImagesController < ApplicationController
     end
   end
 
+  # 更新
   def update
     @image = @entry.images.find(params[:id])
     @image.assign_attributes(image_params)
@@ -40,6 +46,7 @@ class EntryImagesController < ApplicationController
     end
   end
 
+  # 削除
   def destroy
     @image = @entry.images.find(params[:id])
     @image.destroy
