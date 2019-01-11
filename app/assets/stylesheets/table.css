@@ -18,11 +18,11 @@ table.attr td, table.attr th {
 }
 
 table.list th {
-  text-align: left;
+  text-align: center;
 }
 
 table.attr th {
-  text-align: right;
+  text-align: center;
 }
 
 table.list td, table.attr td {
