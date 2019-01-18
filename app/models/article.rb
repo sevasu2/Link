@@ -1,7 +1,8 @@
 class Article < ApplicationRecord
-  validates :title, :body, :released_at, presence: true
-  validates :title, length: { maximum: 80 }
-  validates :body, length: { maximum: 2000 }
+  validates :title, :body, :released_at, presence: true  #必須項目
+  validates :title, length: { maximum: 80 }  #最大80
+  validates :body, length: { maximum: 2000 }  #最大2000
+
 
   def no_expiration
     expired_at.blank?
@@ -15,17 +16,20 @@ class Article < ApplicationRecord
     self.expired_at = nil if @no_expiration
   end
 
+  #掲載終了日時が設定されていて、それが掲載開始日時よりも前の時点であれば、エラー
   validate do
     if expired_at && expired_at < released_at
       errors.add(:expired_at, :expired_at_too_old)
     end
   end
 
+  #
   scope :open_to_the_public, -> { where(member_only: false) }
 
   scope :visible, -> do
-    now = Time.current
+    now = Time.current  #変数nowに現在の日時を入れる
 
+    #掲載日時が現在日時よりも後であるか掲載終了日時がセットされていないか
     where("released_at <= ?", now)
       .where("expired_at > ? OR expired_at IS NULL", now)
   end

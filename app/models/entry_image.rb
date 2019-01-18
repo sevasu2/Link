@@ -1,10 +1,13 @@
 class EntryImage < ApplicationRecord
+
+  #アソシエーションの設定
   belongs_to :entry
   has_one_attached :data
   acts_as_list scope: :entry
 
   attribute :new_data
 
+  #新しい画像データがない場合、エラーとする
   validates :new_data, presence: { on: :create }
 
   validate if: :new_data do
