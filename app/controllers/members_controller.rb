@@ -21,11 +21,4 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
-  #削除ページ
-  def destroy
-    @member = Member.find(params[:id])
-    @member.destroy
-    redirect_to :root, notice: "ご利用ありがとうございました。退会が完了しました。"
-  end
-
 end

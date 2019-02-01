@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "forbidden" => "top#forbidden"
   get "internal_server_error" => "top#internal_server_error"
 
-  resources :members, only: [:index, :show, :destroy] do
+  resources :members, only: [:index, :show] do
   	get "search", on: :collection
     resources :entries, only: [:index]
   end
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]
   resource :password, only: [:show, :edit, :update]
+  resources :comments, only: [:create, :destroy]
 
   resources :articles, only: [:index, :show]
   resources :entries do

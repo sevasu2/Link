@@ -1,5 +1,7 @@
 class Admin::MembersController < Admin::Base
 
+  before_action :set_target_member, only: %i[show edit update destroy]
+
   def index
     @members = Member.order("number")
       .page(params[:page]).per(15)
@@ -15,7 +17,6 @@ class Admin::MembersController < Admin::Base
 
 
   def show
-    @member = Member.find(params[:id])
   end
 
 
@@ -25,7 +26,6 @@ class Admin::MembersController < Admin::Base
 
 
   def edit
-    @member = Member.find(params[:id])
   end
 
   def create
@@ -38,7 +38,6 @@ class Admin::MembersController < Admin::Base
   end
 
   def update
-    @member = Member.find(params[:id])
     @member.assign_attributes(member_params)
     if @member.save
       redirect_to [:admin, @member], notice: "会員情報を更新しました。"
@@ -48,11 +47,11 @@ class Admin::MembersController < Admin::Base
   end
 
   def destroy
-    @member = Member.find(params[:id])
     @member.destroy
     redirect_to :admin_members, notice: "会員を削除しました。"
   end
 
+  # ストロングパラメーター
   private def member_params
     attrs = [
       :new_profile_picture,
@@ -74,5 +73,10 @@ class Admin::MembersController < Admin::Base
     attrs << :password if action_name == "create"
 
     params.require(:member).permit(attrs)
+  end
+
+  # リファクタリング
+  def set_target_member
+    @member = Member.find(params[:id])
   end
 end

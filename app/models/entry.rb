@@ -5,6 +5,7 @@ class Entry < ApplicationRecord
   has_many :images, class_name: "EntryImage"
   has_many :votes, dependent: :destroy
   has_many :voters, through: :votes, source: :member
+  has_many :comments
 
   STATUS_VALUES = %w(draft member_only public)  #状態の文字列はdraft,member_only,publicのいずれか
 

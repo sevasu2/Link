@@ -1,0 +1,23 @@
+current directory: /vagrant/link/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+/usr/bin/ruby2.5 -r ./siteconf20190201-8349-cuilf2.rb extconf.rb
+creating Makefile
+
+current directory: /vagrant/link/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+make: Warning: File 'Makefile' has modification time 0.31 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /vagrant/link/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+make: Warning: File 'Makefile' has modification time 0.29 s in the future
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /vagrant/link/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20190201-8349-i14gqx/byebug
