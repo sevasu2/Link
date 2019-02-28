@@ -1,4 +1,7 @@
 class Admin::ArticlesController < Admin::Base
+
+  before_action :set_target_article, only: %i[show edit update destroy]
+
   # 記事一覧
   def index
     @articles = Article.order(released_at: :desc)
@@ -8,8 +11,6 @@ class Admin::ArticlesController < Admin::Base
 
   # 記事詳細
   def show
-    @article = Article.find(params[:id])
-    # ニュースidがあるものを入れる
   end
 
   # 新規登録フォーム
@@ -19,8 +20,6 @@ class Admin::ArticlesController < Admin::Base
 
   # 編集フォーム
   def edit
-  	@article = Article.find(params[:id])
-    # ニュースidがあるものを入れる
   end
 
   # 新規作成
@@ -35,7 +34,6 @@ class Admin::ArticlesController < Admin::Base
 
   # 更新
   def update
-    @article = Article.find(params[:id]) #ニュースidがあるものを入れる
     @article.assign_attributes(article_params) #ニュースの入っているデータを表示
     if @article.save #保存できた場合
       redirect_to [:admin, @article], notice: "ニュース記事を更新しました。" #管理者ニュース一覧へ
@@ -46,7 +44,6 @@ class Admin::ArticlesController < Admin::Base
 
   # 削除
   def destroy
-    @article = Article.find(params[:id]) #ニュースidの値があるものを取っててくる
     @article.destroy #ニュースデータの削除
     redirect_to :admin_articles #管理者一覧ページへ
   end
@@ -61,5 +58,10 @@ class Admin::ArticlesController < Admin::Base
       :expired_at,
       :member_only
     )
+  end
+
+  # リファクタリング
+  def set_target_article
+    @article = Article.find(params[:id]) #ニュースidの値があるものを取っててくる
   end
 end

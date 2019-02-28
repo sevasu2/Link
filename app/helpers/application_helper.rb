@@ -1,4 +1,5 @@
 module ApplicationHelper
+  #ページのタイトル設定
   def page_title
     title = "Link"
     title = @page_title + " - " + title if @page_title

@@ -1,0 +1,13 @@
+<%= render "shared/errors", obj: @comment %>
+<div class="p-comment__formBox">
+  <%= form_for comment do |f| %>
+    <%= f.hidden_field :entry_id %>
+    <div class="form-group">
+      <%= f.label :comment, 'コメント' %>
+      <%= f.text_area :comment, class: 'form-control', rows: 4,placeholder: "コメントをここに"  %>
+    </div>
+    <div class="event-submit">
+      <%= f.submit '送信' %>
+    </div>
+  <% end %>
+</div>

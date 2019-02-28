@@ -1,5 +1,6 @@
 class PasswordsController < ApplicationController
   before_action :login_required
+  before_action :set_target_password, only: %i[edit update ]
 
   # 詳細ページ
   def show
@@ -8,12 +9,10 @@ class PasswordsController < ApplicationController
 
   #編集ページ
   def edit
-    @member = current_member
   end
 
   #更新
   def update
-    @member = current_member
     current_password = account_params[:current_password]
 
     if current_password.present? #パスワードはあるか
@@ -42,4 +41,10 @@ class PasswordsController < ApplicationController
       :password_confirmation
     )
   end
+
+  # リファクタリング
+  def set_target_password
+    @member = current_member
+  end
+
 end

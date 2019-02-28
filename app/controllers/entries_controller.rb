@@ -17,6 +17,8 @@ class EntriesController < ApplicationController
   #ポートフォリオ詳細
   def show
     @entry = Entry.readable_for(current_member).find(params[:id]) #readable_forスコープで閲覧できる記事絞る
+    @comments = @entry.comments
+    @comment = Comment.new
   end
 
   #新規登録フォーム

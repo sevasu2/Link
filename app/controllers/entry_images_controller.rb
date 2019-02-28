@@ -5,6 +5,8 @@ class EntryImagesController < ApplicationController
     @entry = current_member.entries.find(params[:entry_id]) #ログインしているポートフォリオデータ
   end
 
+   before_action :set_target_entry_image, only: %i[edit update destroy move_higher move_lower]
+
   #画像の一覧
   def index
     @images = @entry.images.order(:position)
@@ -22,7 +24,6 @@ class EntryImagesController < ApplicationController
 
   # 編集ページ
   def edit
-    @image = @entry.images.find(params[:id])
   end
 
   # 新規作成
@@ -37,7 +38,6 @@ class EntryImagesController < ApplicationController
 
   # 更新
   def update
-    @image = @entry.images.find(params[:id])
     @image.assign_attributes(image_params)
     if @image.save
       redirect_to [@entry, :images], notice: "画像を更新しました。"
@@ -48,21 +48,18 @@ class EntryImagesController < ApplicationController
 
   # 削除
   def destroy
-    @image = @entry.images.find(params[:id])
     @image.destroy
     redirect_to [@entry, :images], notice: "画像を削除しました。"
   end
 
   # 表示位置を上げる
   def move_higher
-    @image = @entry.images.find(params[:id])
     @image.move_higher
     redirect_back fallback_location: [@entry, :images]
   end
 
   # 表示位置を下げる
   def move_lower
-    @image = @entry.images.find(params[:id])
     @image.move_lower
     redirect_back fallback_location: [@entry, :images]
   end
@@ -73,5 +70,9 @@ class EntryImagesController < ApplicationController
       :new_data,
       :alt_text
     )
+  end
+
+  def set_target_entry_image
+    @image = @entry.images.find(params[:id])
   end
 end
