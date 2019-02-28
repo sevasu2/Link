@@ -1,5 +1,5 @@
 current directory: /vagrant/link/vendor/bundle/ruby/2.5.0/gems/ffi-1.10.0/ext/ffi_c
-/usr/bin/ruby2.5 -r ./siteconf20190201-8349-qkg5z5.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20190207-1838-1v9kt9v.rb extconf.rb
 checking for ffi.h... no
 checking for ffi.h in /usr/local/include,/usr/include/ffi... no
 checking for shlwapi.h... no
@@ -158,4 +158,4 @@ compiling Types.c
 compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.so
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20190201-8349-qhbzxl
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20190207-1838-nci5c7

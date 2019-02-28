@@ -12,4 +12,4 @@ $(document).on("turbolinks:load", function() {
   cb.bind("click", changeExpiredAt);
 
   changeExpiredAt();
-})
+

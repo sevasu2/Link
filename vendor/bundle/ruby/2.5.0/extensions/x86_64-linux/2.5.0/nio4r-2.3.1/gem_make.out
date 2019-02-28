@@ -1,5 +1,5 @@
 current directory: /vagrant/link/vendor/bundle/ruby/2.5.0/gems/nio4r-2.3.1/ext/nio4r
-/usr/bin/ruby2.5 -r ./siteconf20190201-8349-fo7kov.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20190207-1838-18vuqas.rb extconf.rb
 checking for unistd.h... yes
 checking for sys/select.h... yes
 checking for port_event_t in poll.h... no
@@ -70,4 +70,4 @@ linking shared-object nio4r_ext.so
 
 current directory: /vagrant/link/vendor/bundle/ruby/2.5.0/gems/nio4r-2.3.1/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20190201-8349-19ty7hd
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20190207-1838-1nv0gid

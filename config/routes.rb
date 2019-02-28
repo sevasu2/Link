@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]
   resource :password, only: [:show, :edit, :update]
-  resources :comments, only: [:create, :destroy]
 
   resources :articles, only: [:index, :show]
+  resources :comments, only: [:create, :destroy]
   resources :entries do
     patch :like, :unlike, on: :member
     get :voted, on: :collection

@@ -966,5 +966,11 @@ table.attr input[type="file"]{
 table.list{
   padding: 0;
 }
+
+img{
+    display: inline;
+    margin: 0 auto 15px;
+    width: 100%;
+}
 }
 
