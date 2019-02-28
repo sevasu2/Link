@@ -6,7 +6,7 @@ Rails5.2.1
 
 MySQL5.7
 
-②文字コードをutf8mb4で指定する場合、マイグレーションファイルに特別に記述を追加する
+②文字コードをutf8mb4で指定しているので、マイグレーションファイルに特別に記述を追加する
 各createマイグレーションファイルに下記の記述に書き換える。
 create_table :users, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
 
